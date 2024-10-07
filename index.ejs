@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Dog Image Generator</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="navbar">
+                <h1>Random Dog Image Generator</h1>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="content">
+            <h2>Welcome to the Random Dog Image Generator!</h2>
+            <p>Click the button below to fetch a random dog image and brighten your day!</p>
+            
+            <% if(locals.data) { %>
+                <div class="image-container">
+                    <img src="<%= data %>" alt="Random Dog" class="dog-image">
+                </div>
+            <% } else { %>
+                <div class="message">
+                    <p>Click on the button to get a random dog image!</p>
+                </div>
+                <form action="/sumbit" method="post">
+                    <button class="submit-btn" type="submit">Get Random Dog Image</button>
+                </form>
+            <% } %>
+        </section>
+    </main>
+
+</body>
+</html>
